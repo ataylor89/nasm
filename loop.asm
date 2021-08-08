@@ -8,7 +8,7 @@ L:
         inc rdx
         inc r8b
         cmp r8b, n
-        jne L
+        jl L
 newline:
         mov byte [rdx], 10
         inc rdx
