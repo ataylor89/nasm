@@ -43,25 +43,25 @@ sum:
         syscall        
     
         section .data
-digits:     db      0,
-            db      1,
-            db      2,
-            db      3,
-            db      4,
-            db      5,
-            db      6,
-            db      7,
-            db      8,
+digits:     db      0
+            db      1
+            db      2
+            db      3
+            db      4
+            db      5
+            db      6
+            db      7
+            db      8
             db      9
-letters:    db      '0',
-            db      '1',
-            db      '2',
-            db      '3',
-            db      '4',
-            db      '5',
-            db      '6',
-            db      '7',
-            db      '8',
+letters:    db      '0'
+            db      '1'
+            db      '2'
+            db      '3'
+            db      '4'
+            db      '5'
+            db      '6'
+            db      '7'
+            db      '8'
             db      '9'
         section .bss
 s           equ     9
