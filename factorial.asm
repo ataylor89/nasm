@@ -3,7 +3,7 @@
 
         section .text
 start:
-        mov r8, 5
+        mov r8, 10
         mov r9, 1
 factorial:
         imul r9, r8
