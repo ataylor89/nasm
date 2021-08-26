@@ -40,11 +40,12 @@ L:
         mov rbx, rcx
         inc r9
         jmp L        
-func:
-        mov rax, fib        
+func:    
+        sub rsp, 8 
         mov rdi, message
         call _printf
-        jmp fib
+        add rsp, 8
+        ret
 func2:
         mov rdi, fibmsg
         call _printf
