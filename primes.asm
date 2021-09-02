@@ -51,7 +51,7 @@ summary:
 size    equ     100
 
         section .data
-primes  times   100     db      1
+primes  times   size    db      1
 primesmsg:              db      "P(%d): %d",10,0    
 summarymsg:             db      "Printed the first %d primes", 10, 0
 
