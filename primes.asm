@@ -47,10 +47,8 @@ summary:
         xor rdi, rdi
         syscall        
 
-        section .bss
-size    equ     100
-
         section .data
+size    equ     100     
 primes  times   size    db      1
 primesmsg:              db      "P(%d): %d",10,0    
 summarymsg:             db      "Printed the first %d primes", 10, 0
