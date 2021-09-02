@@ -8,12 +8,12 @@ start:
         mov r10, 1              ; index = 1
 L:  
         inc r10
-        cmp r10, 100            ; when index equals 100 jump to print
+        cmp r10, size           ; when index equals size jump to print
         je print                         
         mov r11, r10            ; r11 will store a secondary index for multiples of primes
 LL:
         add r11, r10            
-        cmp r11, 100            ; our primes array has size 100
+        cmp r11, size           ; our primes array has a constant size 
         jge L
         mov r12, primes         ; r12 will point to a multiple of a prime
         add r12, r11            ; r12 points to a multiple of a prime
@@ -24,7 +24,7 @@ print:
         mov r10, 1
 printloop:
         inc r10
-        cmp r10, 100             ; print the first 100 elements in our array
+        cmp r10, size           ; print the first 100 elements in our array
         je summary
         xor rdx, rdx
         mov rdi, primesmsg
@@ -41,11 +41,14 @@ printloop:
 summary:
         sub rsp, 8
         mov rdi, summarymsg
-        mov rsi, 100
+        mov rsi, size
         call _printf
         mov rax, 0x02000001
         xor rdi, rdi
         syscall        
+
+        section .bss
+size    equ     100
 
         section .data
 primes  times   100     db      1
